@@ -1,3 +1,6 @@
-Geeks for Geeks 
-Welcome to computer science portal 
-Hello Geek!!
+BPlus 87.0 Jane Smith
+A 94.0 Bob Johnson
+CPlus 74.0 Alice Lee
+B 81.0 Tom Brown
+A 96.0 Sara Davis
+BPlus 87.0 David Wilson

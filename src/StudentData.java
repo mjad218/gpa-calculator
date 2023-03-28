@@ -89,11 +89,7 @@ public class StudentData {
             return  grade;
         }
         double total = 0;
-        System.out.println("before loop "  + marks.toString());
-
         for(int i = 0; i < marks.size(); i++) {
-            System.out.println("mark " + i + marks.get(i));
-
             total+= marks.get(i);
         }
         grade = total;
