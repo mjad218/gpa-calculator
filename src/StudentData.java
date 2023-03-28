@@ -1,9 +1,18 @@
 import java.util.ArrayList;
 
 enum GPA {
+    APlus,
     A,
-    MEDIUM,
-    HIGH
+    AMinus,
+    BPlus,
+    B,
+    BMinus,
+    CPlus,
+    C,
+    CMinus,
+    DPlus,
+    D,
+    F
 }
 
 //>= 97 and < =100 4 A+
@@ -27,8 +36,6 @@ public class StudentData {
 
     private GPA gpa;
     private double grade;
-
-
 
     public StudentData(String name, String id, ArrayList<Double> marks) {
         this.name = name;
@@ -64,15 +71,16 @@ public class StudentData {
 
     // Student Activities mark , Oral/Practical mark ,  Midterm exam mark , Final exam mark
     StudentData() {
-
+        this.grade = -1;
     }
 
     public GPA getGpa() {
         if(gpa != null) {
             return gpa;
         }
-
-        return GPACalculator.calcGPA(this);
+        GPA gpa = GPACalculator.calcGPA(this);
+        setGPA(gpa);
+        return gpa;
     }
 
 
@@ -81,11 +89,18 @@ public class StudentData {
             return  grade;
         }
         double total = 0;
+        System.out.println("before loop "  + marks.toString());
+
         for(int i = 0; i < marks.size(); i++) {
+            System.out.println("mark " + i + marks.get(i));
+
             total+= marks.get(i);
         }
         grade = total;
         return grade;
     }
 
+    public void setGPA(GPA gpa) {
+        this.gpa = gpa;
+    }
 }

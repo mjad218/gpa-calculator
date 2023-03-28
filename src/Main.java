@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 public class Main {
@@ -14,10 +15,14 @@ public class Main {
             FileReader fileReader = new FileReader(myfile);
             BufferedReader bufread = new BufferedReader(fileReader);
             Parser parser = new Parser(bufread);
-            StudentData[] data = parser.parse();
+            ArrayList<StudentData> data = parser.parse();
             // reading the file, line by line
-            while((myline = bufread.readLine()) != null)
-                System.out.println(myline);
+            for(int i = 0 ; i < data.size(); i++ ) {
+                StudentData sData = data.get(i);
+                System.out.println(sData.getGpa().toString() + ' ' + sData.getGrade()  + ' ' + sData.getName());
+            }
+//            while((myline = bufread.readLine()) != null)
+//                System.out.println(myline);
 
             bufread.close();
         }
