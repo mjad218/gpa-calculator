@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 
 import java.io.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Parser {
     private BufferedReader bufread;
@@ -10,17 +11,25 @@ public class Parser {
     this.bufread = bufread;
     }
 
-    StudentData[] parse() {
+    ArrayList<StudentData> parse() {
         String myline;
-        StudentData[] dataArr = null;
+        ArrayList<StudentData> dataArr = new ArrayList<>();
+
         try{
             while((myline = this.bufread.readLine()) != null) {
                 System.out.println(myline);
                 String[] fields =  myline.split(",");
                 //John Doe,12345678,8,9,18,50
-                for (String a : fields)
-                    System.out.println(a);
-                StudentData data = new StudentData();
+                String name = fields[0];
+                String id = fields[1];
+                ArrayList<Double> marks = new ArrayList<>(4);
+                for (int i = 2; i < fields.length; i++)
+                    marks.add(Double.valueOf(fields[i]));
+                StudentData studentData = new StudentData();
+                studentData.setId(id);
+                studentData.setName(name);
+                studentData.setMarks(marks);
+                dataArr.add(studentData);
             }
 
         } catch(IOException e) {
