@@ -28,10 +28,13 @@ public class StudentData {
     private GPA gpa;
     private double grade;
 
+
+
     public StudentData(String name, String id, ArrayList<Double> marks) {
         this.name = name;
         this.id = id;
         this.marks = marks;
+        this.grade = -1;
     }
 
     public String getName() {
@@ -64,6 +67,25 @@ public class StudentData {
 
     }
 
+    public GPA getGpa() {
+        if(gpa != null) {
+            return gpa;
+        }
 
+        return GPACalculator.calcGPA(this);
+    }
+
+
+    public double getGrade() {
+        if(grade != -1) {
+            return  grade;
+        }
+        double total = 0;
+        for(int i = 0; i < marks.size(); i++) {
+            total+= marks.get(i);
+        }
+        grade = total;
+        return grade;
+    }
 
 }
