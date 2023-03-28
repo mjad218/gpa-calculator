@@ -13,7 +13,8 @@ public class Main {
         {
             FileReader fileReader = new FileReader(myfile);
             BufferedReader bufread = new BufferedReader(fileReader);
-
+            Parser parser = new Parser(bufread);
+            StudentData[] data = parser.parse();
             // reading the file, line by line
             while((myline = bufread.readLine()) != null)
                 System.out.println(myline);
