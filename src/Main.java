@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,7 +13,7 @@ public class Main {
 
         System.out.print("Enter File Name: ");
         myfile = scan.nextLine();
-
+        outToFile();
         try
         {
             FileReader fileReader = new FileReader(myfile);
@@ -19,6 +23,10 @@ public class Main {
             // reading the file, line by line
             for(int i = 0 ; i < data.size(); i++ ) {
                 StudentData sData = data.get(i);
+
+                PrintWriter out = new PrintWriter("out.txt");
+                out.println('n');
+
                 System.out.println(sData.getGpa().toString() + ' ' + sData.getGrade()  + ' ' + sData.getName());
             }
 //            while((myline = bufread.readLine()) != null)
@@ -30,6 +38,30 @@ public class Main {
         {
             System.out.println("Exception: " +e);
         }
+
+    }
+
+    static void outToFile() {
+        try {
+            File path = new File("C:\\Users\\moham\\IdeaProjects\\gpa-calculator\\outh.txt");
+
+            //passing file instance in filewriter
+            FileWriter wr = new FileWriter(path);
+
+            //calling writer.write() method with the string
+            wr.write("Geeks for Geeks \nWelcome to computer science portal \nHello Geek!!");
+
+            //flushing the writer
+            wr.flush();
+
+            //closing the writer
+            wr.close();
+
+
+        } catch (Error | IOException e) {
+
+        }
+
 
     }
 }
