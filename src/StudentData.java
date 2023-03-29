@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 enum GPA {
-    APlus,
-    A,
+    APlus ,
+    A     ,
     AMinus,
-    BPlus,
-    B,
+    BPlus ,
+    B     ,
     BMinus,
-    CPlus,
-    C,
+    CPlus ,
+    C     ,
     CMinus,
-    DPlus,
-    D,
-    F
+    DPlus ,
+    D     ,
+    F     
 }
 
 //>= 97 and < =100 4 A+
@@ -89,11 +89,7 @@ public class StudentData {
             return  grade;
         }
         double total = 0;
-        System.out.println("before loop "  + marks.toString());
-
         for(int i = 0; i < marks.size(); i++) {
-            System.out.println("mark " + i + marks.get(i));
-
             total+= marks.get(i);
         }
         grade = total;
