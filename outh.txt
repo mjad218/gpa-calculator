@@ -1,6 +1,8 @@
-BPlus 87.0 Jane Smith
-A 94.0 Bob Johnson
-CPlus 74.0 Alice Lee
-B 81.0 Tom Brown
-A 96.0 Sara Davis
-BPlus 87.0 David Wilson
+subject name : English(ENG101) total mark:100
+Student name : John Doe	Student ID : 12345678	Student Gpa : BPlus,,,Student grade : 85.0
+Student name : Jane Smith	Student ID : 23456789	Student Gpa : BPlus,,,Student grade : 87.0
+Student name : Bob Johnson	Student ID : 34567890	Student Gpa : A,,,Student grade : 94.0
+Student name : Alice Lee	Student ID : 45678901	Student Gpa : CPlus,,,Student grade : 74.0
+Student name : Tom Brown	Student ID : 56789012	Student Gpa : B,,,Student grade : 81.0
+Student name : Sara Davis	Student ID : 67890123	Student Gpa : A,,,Student grade : 96.0
+Student name : David Wilson	Student ID : 78901234	Student Gpa : BPlus,,,Student grade : 87.0

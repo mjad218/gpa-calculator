@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 enum GPA {
-    APlus,
-    A,
+    APlus ,
+    A     ,
     AMinus,
-    BPlus,
-    B,
+    BPlus ,
+    B     ,
     BMinus,
-    CPlus,
-    C,
+    CPlus ,
+    C     ,
     CMinus,
-    DPlus,
-    D,
-    F
+    DPlus ,
+    D     ,
+    F     
 }
 
 //>= 97 and < =100 4 A+

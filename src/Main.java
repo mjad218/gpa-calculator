@@ -17,20 +17,25 @@ public class Main {
         {
             FileReader fileReader = new FileReader(myfile);
             BufferedReader bufread = new BufferedReader(fileReader);
-           String str1 = bufread.readLine();
-            System.out.println(str1);
+            String str1 = bufread.readLine();
+            String[] fields =  str1.split(",");
+            Validation.IsStubjectDataTrue(fields);
+            //System.out.println(str1);
             Parser parser = new Parser(bufread);
      
             ArrayList<StudentData> data = parser.parse();
             // reading the file, line by line
-            String str = "";//str1 + "\n";
+            String str = "subject name : " + fields[0] + "(" + fields[1] + ")" + " total mark:" + fields[2] + "\n";//str1 + "\n";
             for(int i = 0 ; i < data.size(); i++ ) {
                 StudentData sData = data.get(i);
                 PrintWriter out = new PrintWriter("out.txt");
                 out.println('n');
-                str += sData.getGpa().toString() + ' ' + sData.getGrade()  + ' ' + sData.getName() + '\n';
-                System.out.println(sData.getGpa().toString() + ' ' + sData.getGrade()  + ' ' + sData.getName());
+                str +=   "Student name : "+ sData.getName() + "\t" +
+                         "Student ID : "+ sData.getId() + "\t"+ 
+                         "Student Gpa : "+sData.getGpa().toString() +",,," + 
+                         "Student grade : "+sData.getGrade()  + "\n";
             }
+            System.out.println(str);
             outToFile(str);
 //            while((myline = bufread.readLine()) != null)
 //                System.out.println(myline);

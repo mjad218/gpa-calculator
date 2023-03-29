@@ -19,5 +19,13 @@ public class Validation {
         if (!(student.getMarks().get(3)  >= 0 && student.getMarks().get(3)  <= 60)) {
             throw new IllegalArgumentException("Invalid final exam mark");
         }
+    }
+public  static void IsStubjectDataTrue(String[] subject) {
+    if (!(subject[0].matches("^[A-Za-z][A-Za-z ]*$")))  {
+         throw new IllegalArgumentException("Invalid subject name");
+    }
+    if (!(subject[1].matches("^[A-Za-z]{3}[0-9]{3}s?$"))) {
+        throw new IllegalArgumentException("Invalid subject code");
+    }
 }
 }
